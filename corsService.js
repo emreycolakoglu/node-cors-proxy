@@ -12,3 +12,19 @@ exports.downloadUrl = function(url) {
       });
   });
 };
+
+exports.postUrl = function(url, data, headers = {}, params = {}) {
+  return new Promise((resolve, reject) => {
+    axios
+      .post(url, data, {
+        headers,
+        params
+      })
+      .then(result => {
+        resolve(result.data);
+      })
+      .catch(error => {
+        reject(error);
+      });
+  });
+};
