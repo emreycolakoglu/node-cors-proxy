@@ -15,7 +15,7 @@ exports.get = function(req, res) {
 };
 
 exports.post = function(req, res) {
-  CorsService.postUrl(req.body.url, req.body)
+  CorsService.postUrl(req.query.url, req.body)
     .then(result => {
       res.send(result);
     })
